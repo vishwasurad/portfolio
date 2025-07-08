@@ -911,88 +911,109 @@
             <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Education -->
                 <div class="space-y-8">
-                    <div class="text-center mb-8">
+                    <div class="text-center mb-8 animate-fade-in-up">
                         <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-2">Education</h3>
                         <p class="text-gray-600 dark:text-gray-400">My academic journey and achievements</p>
                     </div>
                     
                     <!-- Bachelor's Degree -->
-                    <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-graduation-cap text-white text-xl"></i>
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 animate-fade-in-up group relative overflow-hidden" style="animation-delay: 0.1s;">
+                        <!-- Animated border gradient -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-xl"></div>
+                        
+                        <div class="flex items-start space-x-4 relative z-10">
+                            <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                                <i class="fas fa-graduation-cap text-white text-xl group-hover:animate-bounce"></i>
                             </div>
                             <div class="flex-1">
-                                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-1">Bachelor of Engineering</h4>
-                                <p class="text-primary font-medium mb-2">Computer Science</p>
-                                <p class="text-gray-700 dark:text-gray-300 font-medium">Atharva College of Engineering (ACE)</p>
+                                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-primary dark:group-hover:text-primary transition-colors duration-300">Bachelor of Engineering</h4>
+                                <p class="text-primary font-medium mb-2 group-hover:font-bold transition-all duration-300">Computer Science</p>
+                                <p class="text-gray-700 dark:text-gray-300 font-medium group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">Atharva College of Engineering (ACE)</p>
                                 <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">Mumbai, Maharashtra</p>
                                 <div class="flex flex-wrap items-center gap-4 text-sm">
-                                    <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full">
+                                    <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full transition-all duration-300 hover:scale-110 hover:bg-green-200 dark:hover:bg-green-800">
                                         <i class="fas fa-calendar mr-1"></i>Sept 2021 - May 2025
                                     </span>
-                                    <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">
+                                    <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full transition-all duration-300 hover:scale-110 hover:bg-blue-200 dark:hover:bg-blue-800">
                                         <i class="fas fa-star mr-1"></i>CGPA: 8.24
                                     </span>
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- Floating decorative elements -->
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+                        <div class="absolute bottom-4 left-4 w-6 h-6 bg-secondary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse" style="animation-delay: 0.5s;"></div>
                     </div>
                     
                     <!-- Higher Secondary -->
-                    <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-16 h-16 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-school text-white text-xl"></i>
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 animate-fade-in-up group relative overflow-hidden" style="animation-delay: 0.2s;">
+                        <!-- Animated border gradient -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-secondary via-primary to-secondary opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-xl"></div>
+                        
+                        <div class="flex items-start space-x-4 relative z-10">
+                            <div class="w-16 h-16 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                                <i class="fas fa-school text-white text-xl group-hover:animate-pulse"></i>
                             </div>
                             <div class="flex-1">
-                                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-1">Higher Secondary Education</h4>
-                                <p class="text-secondary font-medium mb-2">Science (PCM)</p>
-                                <p class="text-gray-700 dark:text-gray-300 font-medium">Thakur College of Science and Commerce</p>
+                                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-secondary dark:group-hover:text-secondary transition-colors duration-300">Higher Secondary Education</h4>
+                                <p class="text-secondary font-medium mb-2 group-hover:font-bold transition-all duration-300">Science (PCM)</p>
+                                <p class="text-gray-700 dark:text-gray-300 font-medium group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">Thakur College of Science and Commerce</p>
                                 <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">Mumbai, Maharashtra</p>
                                 <div class="flex flex-wrap items-center gap-4 text-sm">
-                                    <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full">
+                                    <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full transition-all duration-300 hover:scale-110 hover:bg-green-200 dark:hover:bg-green-800">
                                         <i class="fas fa-calendar mr-1"></i>Jan 2019 - Mar 2021
                                     </span>
-                                    <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">
+                                    <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full transition-all duration-300 hover:scale-110 hover:bg-blue-200 dark:hover:bg-blue-800">
                                         <i class="fas fa-percentage mr-1"></i>87%
                                     </span>
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- Floating decorative elements -->
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-secondary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+                        <div class="absolute bottom-4 left-4 w-6 h-6 bg-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse" style="animation-delay: 0.5s;"></div>
                     </div>
                 </div>
                 
                 <!-- Certifications -->
                 <div class="space-y-8">
-                    <div class="text-center mb-8">
+                    <div class="text-center mb-8 animate-fade-in-up" style="animation-delay: 0.1s;">
                         <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-2">Certifications</h3>
                         <p class="text-gray-600 dark:text-gray-400">Professional certifications and achievements</p>
                     </div>
                     
                     <!-- AWS Certification -->
-                    <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fab fa-aws text-white text-xl"></i>
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 animate-fade-in-up group relative overflow-hidden" style="animation-delay: 0.3s;">
+                        <!-- Animated border gradient -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-xl"></div>
+                        
+                        <div class="flex items-start space-x-4 relative z-10">
+                            <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                                <i class="fab fa-aws text-white text-xl group-hover:animate-bounce"></i>
                             </div>
                             <div class="flex-1">
-                                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-1">AWS Cloud Practitioner Essentials</h4>
-                                <p class="text-orange-600 dark:text-orange-400 font-medium mb-2">Amazon Web Services</p>
-                                <p class="text-gray-700 dark:text-gray-300 font-medium">Coursera</p>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">AWS Cloud Practitioner Essentials</h4>
+                                <p class="text-orange-600 dark:text-orange-400 font-medium mb-2 group-hover:font-bold transition-all duration-300">Amazon Web Services</p>
+                                <p class="text-gray-700 dark:text-gray-300 font-medium group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">Coursera</p>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                                     Comprehensive understanding of AWS Cloud concepts, services, security, architecture, pricing, and support.
                                 </p>
                                 <div class="flex items-center space-x-2">
-                                    <span class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm">
+                                    <span class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm transition-all duration-300 hover:scale-110 hover:bg-orange-200 dark:hover:bg-orange-800">
                                         <i class="fas fa-certificate mr-1"></i>Certified
                                     </span>
-                                    <a href="https://www.coursera.org/account/accomplishments/verify/FYZBLVWBY9UK" target="_blank" class="text-primary hover:text-secondary transition-colors text-sm font-medium">
-                                        <i class="fas fa-external-link-alt mr-1"></i>View Certificate
+                                    <a href="https://www.coursera.org/account/accomplishments/verify/FYZBLVWBY9UK" target="_blank" class="text-primary hover:text-secondary transition-all duration-300 text-sm font-medium transform hover:scale-105 inline-flex items-center group/link">
+                                        <i class="fas fa-external-link-alt mr-1 group-hover/link:animate-pulse"></i>View Certificate
                                     </a>
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- Floating decorative elements -->
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-orange-400/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+                        <div class="absolute bottom-4 left-4 w-6 h-6 bg-orange-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse" style="animation-delay: 0.5s;"></div>
                     </div>
                     
                     <!-- Extracurricular Achievements -->
@@ -1171,7 +1192,7 @@
                         <i class="fas fa-envelope mr-2"></i>
                         Get In Touch
                     </a>
-                    <a href="./assets/Vishwa_Surad_Resume.pdf" download class="bg-white/20 backdrop-blur-sm text-white border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white/30 transition-all transform hover:scale-105 flex items-center">
+                    <a href="./assets/resume.pdf" download class="bg-white/20 backdrop-blur-sm text-white border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white/30 transition-all transform hover:scale-105 flex items-center">
                         <i class="fas fa-download mr-2"></i>
                         Download Resume
                     </a>
