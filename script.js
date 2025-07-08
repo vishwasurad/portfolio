@@ -191,17 +191,35 @@ if (contactForm) {
             return;
         }
         
-        // Simulate form submission
+        // Submit form to FormSubmit
         const submitButton = this.querySelector('button[type="submit"]');
         const originalText = submitButton.innerHTML;
         submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
         submitButton.disabled = true;
         
+        // Create a hidden iframe for form submission
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.name = 'hiddenFrame';
+        document.body.appendChild(iframe);
+        
+        // Set form target to iframe
+        this.target = 'hiddenFrame';
+        
+        // Submit the actual form
+        this.submit();
+        
+        // Show success message after a delay
         setTimeout(() => {
             showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
             this.reset();
             submitButton.innerHTML = originalText;
             submitButton.disabled = false;
+            
+            // Remove iframe after submission
+            if (iframe.parentNode) {
+                iframe.parentNode.removeChild(iframe);
+            }
         }, 2000);
     });
 }
