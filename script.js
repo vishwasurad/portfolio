@@ -428,6 +428,68 @@ function animateSkillBars() {
     });
 }
 
+// Function to render projects dynamically
+function renderProjects() {
+    const projectsContainer = document.getElementById('projectsContainer');
+    
+    if (!projectsContainer) {
+        console.error('Projects container not found');
+        return;
+    }
+
+    // Clear existing content
+    projectsContainer.innerHTML = '';
+
+    // Render each project
+    projectsData.forEach(project => {
+        const projectCard = createProjectCard(project);
+        projectsContainer.appendChild(projectCard);
+    });
+}
+
+// Function to create individual project card
+function createProjectCard(project) {
+    const projectDiv = document.createElement('div');
+    projectDiv.className = 'project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group';
+    projectDiv.setAttribute('data-category', project.category);
+
+    // Create technologies HTML
+    const technologiesHTML = project.technologies.map(tech => {
+        const colorClass = technologyColors[tech.color];
+        return `<span class="${colorClass.bg} ${colorClass.text} px-2 py-1 rounded text-xs">${tech.name}</span>`;
+    }).join('');
+
+    // Create image or fallback
+    const imageHTML = project.image 
+        ? `<img src="${project.image}" alt="${project.alt}" class="object-contain group-hover:scale-110 transition-transform" />`
+        : `<div class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+             <i class="fas fa-code text-white text-4xl group-hover:scale-110 transition-transform"></i>
+           </div>`;
+
+    projectDiv.innerHTML = `
+        ${imageHTML}
+        <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">${project.title}</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                ${project.description}
+            </p>
+            <div class="flex flex-wrap gap-3 mb-4">
+                ${technologiesHTML}
+            </div>
+            <div class="flex justify-between">
+                <a href="${project.links.github}" target="_blank" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                    <i class="fab fa-github mr-1"></i>Code
+                </a>
+                <a href="${project.links.live}" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition-colors">
+                    <i class="fas fa-external-link-alt mr-1"></i>Live
+                </a>
+            </div>
+        </div>
+    `;
+
+    return projectDiv;
+}
+
 // Project Tab Functionality
 document.addEventListener('DOMContentLoaded', function() {
     initializeProjectsSection();
@@ -451,6 +513,8 @@ function initializeProjectsSection() {
     updateProjectTabStyles();
 }
 
+
+// Update the project filtering function to work with dynamic content
 function filterProjects(category) {
     const projectCards = document.querySelectorAll('.project-card');
     
@@ -459,12 +523,13 @@ function filterProjects(category) {
         
         if (category === 'all' || cardCategory === category) {
             card.style.display = 'block';
+            card.classList.remove('hidden');
+            // Add fade-in animation
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
             
-            // Animate card appearance
             setTimeout(() => {
-                card.style.transition = 'all 0.3s ease';
+                card.style.transition = 'all 0.5s ease';
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
             }, 50);
@@ -475,6 +540,7 @@ function filterProjects(category) {
             
             setTimeout(() => {
                 card.style.display = 'none';
+                card.classList.add('hidden');
             }, 300);
         }
     });
@@ -685,6 +751,30 @@ document.addEventListener('keydown', (e) => {
             document.body.style.animation = '';
         }, 2000);
     }
+});
+
+// Initialize projects when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Render projects dynamically
+    renderProjects();
+    
+    // Initialize project filtering
+    const projectTabs = document.querySelectorAll('.projects-tab-btn');
+    projectTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            
+            // Update active tab
+            projectTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter projects
+            filterProjects(category);
+        });
+    });
+    
+    // Set initial filter to "all"
+    filterProjects('all');
 });
 
 // Add rainbow animation for easter egg
