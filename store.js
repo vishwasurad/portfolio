@@ -104,6 +104,27 @@ const projectsData = [
             live: "https://netflix-clone-sandy-kappa.vercel.app/"
         }
     },
+    {
+    id: 6,
+    title: "Travel Booking Application",
+    description: "Full-stack web application enabling users to search, book, and manage travel reservations across flights, trains, and buses. Built with Django and MySQL.",
+    image: "./assets/images/tba.png", 
+    alt: "Travel Booking Application - User dashboard showing booking history and travel options",
+    category: "fullstack",
+    technologies: [
+        { name: "Django", color: "green" },
+        { name: "Python", color: "blue" },
+        { name: "Bootstrap", color: "purple" },
+        { name: "MySQL", color: "orange" },
+        { name: "HTML/CSS", color: "red" },
+        { name: "JavaScript", color: "yellow" },
+        { name: "Git", color: "gray" }
+    ],
+    links: {
+        github: "https://github.com/vishwasurad/Travel-Booking",
+        live: "https://vishwasurad.pythonanywhere.com/" 
+    }
+},
 ];
 
 // Technology color mappings for consistent styling
