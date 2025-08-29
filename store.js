@@ -2,7 +2,7 @@ const projectsData = [
     {
         id: 1,
         title: "Joywrite",
-        description: "A secure, fully responsive blogging platform with JWT authentication, CRUD operations, and social sharing features.",
+        description: "A space for everyone to freely write their stories, dreams, experiences, and thoughts and connect with others through shared expression.",
         image: "./assets/images/Jowwrite.png",
         alt: "Joywrite Project",
         category: "fullstack",
